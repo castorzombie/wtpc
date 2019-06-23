@@ -1,0 +1,117 @@
+/*LAYOUT*/
+.wtn-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  background-color: white;
+}
+
+/* HEADER*/
+.logoHeader {
+  width: 60px;
+  overflow: hidden;
+}
+
+/*UI CMP*/
+.wfnbtn {
+  color: rgba(0, 0, 0, 0.87);
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  min-width: 64px;
+  box-sizing: border-box;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,border 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 500;
+  line-height: 1.75;
+  border-radius: 4px;
+  letter-spacing: 0.02857em;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #00A3E0;
+  box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 3px 1px -2px rgba(0,0,0,0.12);
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+.wfnbtn:hover {
+  background-color: #66C8ED;
+}
+
+.mapdisplay {
+  background-image: url(./img/planta-1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: auto 110%;
+  background-position: center;
+  height: 100vh;
+}
+
+/*HELPERS*/
+.wfnmargintop10 {
+  margin-top: 10px;
+}
+.wfnmargintop20 {
+  margin-top: 20px;
+}
+
+.height100 {
+  height: 100vh;
+}
+
+/* MATERIAL-UI REWRITES*/
+.DayPicker-wrapper {
+  font-size:1em;
+  padding-bottom: 0;
+}
+.DayPicker-Day--birthday {
+  background-color: #00bcd4;
+  color: white;
+}
+
+#figureZoom {
+  width: 600px;
+  background-repeat: no-repeat;
+}
+
+#figureZoom:hover img {
+  opacity: 0;
+}
+
+#imgZoom {
+  display: block;
+  width: 100%;
+  pointer-events: none;
+}
+
+
+/*MEDIA QUERIES*/
+.makeStyles-root-178 {
+  height: auto;
+}
+@media(min-width: 420px) {
+  .DayPicker-wrapper {
+    font-size:1.1em;
+  }
+}
+@media(min-width: 600px) {
+  .makeStyles-root-178 {
+    height: 100vh;
+  }
+  .DayPicker-wrapper {
+    font-size:1.2em;
+  }
+}
+@media(min-width: 768px) {
+  .DayPicker-wrapper {
+    font-size:1.3em;
+  }
+}
+@media(min-width: 992px) {
+  
+}
+@media(min-width: 1200px) {
+  
+}
+@media(max-width: 1600px) {
+  
+}

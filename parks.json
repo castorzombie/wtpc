@@ -1,0 +1,16 @@
+{
+  "parks": [
+    {
+      "id": "1c4d7a75-dfb4-4b89-b082-faad8aaefb64",
+      "date": "14/12/2019 19:08:02",
+      "spot": "333",
+      "free": true
+    },
+    {
+      "id": "ca43cbd8-ea41-4658-a980-4afac150ce5a",
+      "date": "14/12/2019 19:09:12",
+      "spot": "222",
+      "free": true
+    }
+  ]
+}
