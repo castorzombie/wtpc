@@ -1,5 +1,4 @@
 /*LAYOUT*/
-
 html, body
 {
   height: 100%;
@@ -7,7 +6,6 @@ html, body
   margin: 0;
   padding: 0;
 }
-
 body {
   position:absolute;
   top:0;
@@ -15,7 +13,6 @@ body {
   right:0;
   left:0;
 }
-
 .wtn-wrapper {
   max-width: 1600px;
   margin: 0 auto;
@@ -100,7 +97,7 @@ body {
 }
 
 #mapBg > div {
-  max-height: 100vh
+  max-height: 100vh;
 }
 #mapBg > div > div {
    /* right: 0 */
