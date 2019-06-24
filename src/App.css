@@ -1,8 +1,33 @@
 /*LAYOUT*/
+
+html, body
+{
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position:absolute;
+  top:0;
+  bottom:0;
+  right:0;
+  left:0;
+}
+
 .wtn-wrapper {
   max-width: 1600px;
   margin: 0 auto;
-  background-color: white;
+  background-color: #fff;
+}
+.loginwrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background-color: #fff;
 }
 
 /* HEADER*/
@@ -35,15 +60,6 @@
 }
 .wfnbtn:hover {
   background-color: #66C8ED;
-}
-
-.mapdisplay {
-  background-image: url(./img/planta-1.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-size: auto 110%;
-  background-position: center;
-  height: 100vh;
 }
 
 /*HELPERS*/
@@ -83,6 +99,12 @@
   pointer-events: none;
 }
 
+#mapBg > div {
+  max-height: 100vh
+}
+#mapBg > div > div {
+   /* right: 0 */
+}
 
 /*MEDIA QUERIES*/
 .makeStyles-root-178 {
@@ -102,6 +124,21 @@
   }
 }
 @media(min-width: 768px) {
+  .loginwrapper{
+    background-image: url(https://werfen.com/sites/default/files/styles/compress/public/2018-10/Werfen%20Home%20Background%208_0.jpg?itok=7EzEG7jt); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+  }
   .DayPicker-wrapper {
     font-size:1.3em;
   }
