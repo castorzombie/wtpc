@@ -4,10 +4,21 @@ import Switch from '@material-ui/core/Switch';
 import Container from '@material-ui/core/Container';
 import PinchZoomPan from "react-responsive-pinch-zoom-pan"
 import plantaPrimera from './../img/planta-1-wtp.jpg'
+import plantaSegunda from './../img/planta-1.jpg'
 
 export default class Map extends Component {
   constructor(props){
     super(props)
+    this.state={
+        plantaPrimera: true
+    }
+  }
+
+  handleSwitch = (e) => {
+    console.log(e.target.checked)
+    this.setState({
+      plantaPrimera: !this.state.plantaPrimera
+    })
   }
 
   render() {
@@ -20,10 +31,10 @@ export default class Map extends Component {
                 </Grid>
                 <Grid item>
                   <Switch
-                    defaultChecked
                     value="checkedF"
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
+                    onChange={this.handleSwitch}
                   />
                 </Grid>
                 <Grid item>
@@ -32,7 +43,7 @@ export default class Map extends Component {
               </Grid>
           </Container>
           <PinchZoomPan position="center">
-            <img alt='Parking Map Image' src={plantaPrimera} />
+            <img alt='Parking Map Image' src={this.state.plantaPrimera ? plantaPrimera: plantaSegunda} />
         </PinchZoomPan>
       </Grid>
     )
