@@ -1,12 +1,11 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
+import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
-import Switch from '@material-ui/core/Switch';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -77,40 +76,19 @@ export default function ReservedHeader() {
                       id: 'age-native-simple',
                     }}
                     >
-                    <option value="" />
-                    <option value={10}>Plaza 103 disponible en planta 1</option>
-                    <option value={20}>Plaza 212 disponible en planta 2</option>
-                    <option value={30}>Plaza 222 disponible en planta 2</option>
+                    <option value={10}>Plaza 060 en planta 1</option>
+                    <option value={20}>Plaza 061 en planta 1</option>
+                    <option value={30}>Plaza 062 en planta 1</option>
                   </Select>
                 </Grid>
               </Grid>
             <div className={classes.heroButtons}>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className={classes.primaryBtn}
-            >
-              Reservar Plaza
-            </Button>
+            <Link to={`dashboard`} 
+                  variant="contained"
+                  color="primary"
+                  className="wfnbtn"
+                  style={{ width: '100%', display: 'inline-block'}}> Reservar Plaza</Link>
              </div>
-              <Grid container spacing={2} justify="center" alignItems="center" >
-              <Grid item>
-                 Mapa Planta 1
-                </Grid>
-                <Grid item>
-                  <Switch
-                    defaultChecked
-                    value="checkedF"
-                    color="default"
-                    inputProps={{ 'aria-label': 'checkbox with default color' }}
-                  />
-                </Grid>
-                <Grid item>
-                  Mapa Planta 2
-                </Grid>
-              </Grid>
           </Container>
         </div>
       </main>

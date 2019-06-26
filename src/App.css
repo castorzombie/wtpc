@@ -1,4 +1,4 @@
-/*LAYOUT*/
+/*RESETS*/
 html, body
 {
   height: 100%;
@@ -13,6 +13,9 @@ body {
   right:0;
   left:0;
 }
+div:focus, button:focus , span:focus {outline:0;}
+
+/*LAYOUT*/
 .wtn-wrapper {
   max-width: 1600px;
   margin: 0 auto;
@@ -33,7 +36,7 @@ body {
   overflow: hidden;
 }
 
-/*UI CMP*/
+/*UI COMPONENTS*/
 .wfnbtn {
   color: rgba(0, 0, 0, 0.87);
   padding: 6px 16px;
@@ -55,8 +58,70 @@ body {
   text-decoration: none;
   cursor: pointer;
 }
+.iconButton {
+  border:0;
+  background-image: linear-gradient(to bottom, #00A3E0 0%, #00A3E0 100%);
+  background-color: #00A3E0;
+  color: #fff;
+}
+.iconButton:hover {
+  background-image: linear-gradient(to bottom, #00bcd4 0%, #00bcd4 100%);
+  background-color: #00bcd4;
+  color: #fff;
+}
+.mapTitle {
+  margin:30px 0 0 0;
+}
+.mapTitle p {
+  margin:0;
+}
 .wfnbtn:hover {
   background-color: #66C8ED;
+}
+#mapBg > div {
+  max-height: 100vh;
+}
+#mapBg > div > div {
+    position: relative!important;
+    text-align: center;
+}
+
+/* MATERIAL-UI REWRITES*/
+.DayPicker-wrapper {
+  font-size:1em;
+  padding-bottom: 0;
+}
+.DayPicker-Day, .DayPicker-Day:hover {
+ background-color:  #EBF5F7;
+  color: #28373C;
+}
+.DayPicker:not(.DayPicker--interactionDisabled) .DayPicker-Day:not(.DayPicker-Day--disabled):not(.DayPicker-Day--selected):not(.DayPicker-Day--outside):hover {
+  background-color:  #EBF5F7;
+  color: #28373C;
+}
+
+.DayPicker-Day--disabled, .DayPicker-Day--disabled:hover{
+  background-color:  #EBF5F7;
+  color: #C5D7DB;
+}
+.DayPicker-Day--outside, .DayPicker-Day--outside:hover {
+  color: #C5D7DB;
+}
+.MuiListItem-root {
+  padding-top: 4px!important;
+  padding-bottom: 0px!important;
+}
+.MuiAvatar-root {
+  width: 25px!important;
+  height: 25px!important;
+}
+.MuiListItemAvatar-root {
+  min-width: 40px!important;
+  flex-shrink: 0;
+}
+
+.MuiFormLabel-root {
+  line-height: 2!important;
 }
 
 /*HELPERS*/
@@ -69,38 +134,6 @@ body {
 
 .height100 {
   height: 100vh;
-}
-
-/* MATERIAL-UI REWRITES*/
-.DayPicker-wrapper {
-  font-size:1em;
-  padding-bottom: 0;
-}
-.DayPicker-Day--birthday {
-  background-color: #00bcd4;
-  color: white;
-}
-
-#figureZoom {
-  width: 600px;
-  background-repeat: no-repeat;
-}
-
-#figureZoom:hover img {
-  opacity: 0;
-}
-
-#imgZoom {
-  display: block;
-  width: 100%;
-  pointer-events: none;
-}
-
-#mapBg > div {
-  max-height: 100vh;
-}
-#mapBg > div > div {
-   /* right: 0 */
 }
 
 /*MEDIA QUERIES*/
@@ -122,7 +155,7 @@ body {
 }
 @media(min-width: 768px) {
   .loginwrapper{
-    background-image: url(https://werfen.com/sites/default/files/styles/compress/public/2018-10/Werfen%20Home%20Background%208_0.jpg?itok=7EzEG7jt); 
+    background-image: url(./img/P1_a.jpg); 
     background-repeat: no-repeat;
     background-size: cover;
     position: absolute;

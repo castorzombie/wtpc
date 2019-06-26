@@ -1,24 +1,37 @@
 import React, { Component} from 'react';
 import Grid from '@material-ui/core/Grid';
+import Switch from '@material-ui/core/Switch';
+import Container from '@material-ui/core/Container';
 import PinchZoomPan from "react-responsive-pinch-zoom-pan"
-import plantaPrimera from './../img/planta-1.jpg'
-import plantaSegona from './../img/planta-1.jpg'
-
-const src = 'https://images.unsplash.com/photo-1444065381814-865dc9da92c0'
+import plantaPrimera from './../img/planta-1-wtp.jpg'
 
 export default class Map extends Component {
   constructor(props){
     super(props)
-    this.state = {
-      backgroundImage: `url(${plantaPrimera})`,
-      backgroundPosition: '0% 0%'
-    }
   }
 
   render() {
     return (
       <Grid container component="main" id="mapBg" >
-          <PinchZoomPan>
+          <Container maxWidth="sm" className="mapTitle">
+          <Grid container spacing={2} justify="center" alignItems="center" >
+              <Grid item>
+                 Mapa Planta 1
+                </Grid>
+                <Grid item>
+                  <Switch
+                    defaultChecked
+                    value="checkedF"
+                    color="default"
+                    inputProps={{ 'aria-label': 'checkbox with default color' }}
+                  />
+                </Grid>
+                <Grid item>
+                  Mapa Planta 2
+                </Grid>
+              </Grid>
+          </Container>
+          <PinchZoomPan position="center">
             <img alt='Parking Map Image' src={plantaPrimera} />
         </PinchZoomPan>
       </Grid>

@@ -5,7 +5,7 @@ import Link from '@material-ui/core/Link';
 
 function MadeWithLove() {
     return (
-      <Typography variant="body2" color="white" align="center">
+      <Typography variant="body2"  align="center">
         Plaça d'Europa, 21-23, 08908 L'Hospitalet de Llobregat
       </Typography>
     );
