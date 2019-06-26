@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
 import NavToolbar from './NavToolbar';
 import Footer from './Footer';
 import Typography from '@material-ui/core/Typography';
