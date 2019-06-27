@@ -15,7 +15,6 @@ export default class Parks extends Component {
                 <NavToolbar />
                 <Grid container component="main">
                     <Grid item xs={12} sm={12} md={5} >
-                        <DashboardHeader />
                         <Calendar />
                     </Grid>
                     <Grid item xs={12} sm={12} md={7} >

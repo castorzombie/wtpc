@@ -95,7 +95,8 @@ div:focus, button:focus , span:focus {outline:0;}
   font-family: 'Noto Sans';
   font-size: 2em;
   font-weight: 200;
-  text-align: center
+  text-align: center;
+  margin-bottom:10px
 }
 .DayPicker-wrapper {
   font-size:1em;
@@ -132,6 +133,13 @@ div:focus, button:focus , span:focus {outline:0;}
 
 .MuiFormLabel-root {
   line-height: 2!important;
+}
+
+.hideItem {
+  display:none
+}
+.showItem {
+  display: inline-block;
 }
 
 /*HELPERS*/
