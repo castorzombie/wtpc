@@ -4,7 +4,7 @@ import Switch from '@material-ui/core/Switch';
 import Container from '@material-ui/core/Container';
 import PinchZoomPan from "react-responsive-pinch-zoom-pan"
 import plantaPrimera from './../img/planta-1-wtp.jpg'
-import plantaSegunda from './../img/planta-1.jpg'
+import plantaSegunda from './../img/planta-2.jpg'
 
 export default class Map extends Component {
   constructor(props){
@@ -15,7 +15,6 @@ export default class Map extends Component {
   }
 
   handleSwitch = (e) => {
-    console.log(e.target.checked)
     this.setState({
       plantaPrimera: !this.state.plantaPrimera
     })

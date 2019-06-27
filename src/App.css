@@ -87,6 +87,16 @@ div:focus, button:focus , span:focus {outline:0;}
 }
 
 /* MATERIAL-UI REWRITES*/
+.hederContent {  
+  padding: 32px 0px 0px;
+}
+.headerTypo {
+  color: #28373C;
+  font-family: 'Noto Sans';
+  font-size: 2em;
+  font-weight: 200;
+  text-align: center
+}
 .DayPicker-wrapper {
   font-size:1em;
   padding-bottom: 0;
