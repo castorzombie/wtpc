@@ -1,7 +1,8 @@
-import { SHOW_PARKS, SHOW_PARK, ADD_PARK, DELETE_PARK } from '../actions/types';
+import { SHOW_PARKS, SHOW_PARK, ADD_PARK, DELETE_PARK, GET_RESERVATION_DATE, SET_RESERVATION_DATE } from '../actions/types';
 
 const initialState = {
-    parks: []
+    parks: [],
+    reservationDate: ''
 };
 
 export default function(state=initialState, action) {
@@ -25,7 +26,16 @@ export default function(state=initialState, action) {
             return {
                 ...state,
                 parks: state.parks.filter(park => park.id !== action.payload)
-            }; 
+            };
+        case SET_RESERVATION_DATE:
+            return {
+                ...state,
+                reservationDate: action.reservationDate
+            }
+        case GET_RESERVATION_DATE:
+            return {
+                ...state
+            } 
         default:
             return state;
     }

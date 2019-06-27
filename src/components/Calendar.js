@@ -16,6 +16,7 @@ import { Redirect } from 'react-router';
 import DayPicker from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
 
+  //CONSTANTS
   //const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];  
   const cards = [1];  
   const MONTHS = [
@@ -42,73 +43,75 @@ import 'react-day-picker/lib/style.css';
     'Sabado',
   ];
   const WEEKDAYS_SHORT = ['Do', 'Lu', 'Ma', 'Me', 'Ju', 'Ve', 'Sa'];
+  const modifiers = {
+    thursdays: { daysOfWeek: [4] },
+    reserved1: new Date(2019, 6, 30),
+    reserved2: new Date(2019, 6, 31),
+    reserved3: new Date(2019, 6, 29),
+    available1: new Date(2019, 6, 24),
+    available2: new Date(2019, 6, 25),
+    available3: new Date(2019, 6, 26),
+  };
+  const modifiersStyles = {
+    reserved1: {
+      color: 'white',
+      backgroundColor: '#00A3E0',
+    },
+    reserved2: {
+      color: 'white',
+      backgroundColor: '#00A3E0',
+    },
+    reserved3: {
+      color: 'white',
+      backgroundColor: '#00A3E0',
+    },
+    available1: {
+      color: 'white',
+      backgroundColor: '#15A919',
+    },
+    available2: {
+      color: 'white',
+      backgroundColor: '#15A919',
+    },
+    available3: {
+      color: 'white',
+      backgroundColor: '#15A919',
+    },
+    outside: {
+      backgroundColor: 'white',
+    },
+  }; 
+  //END CONSTANTS
+
   
   class Calendar extends Component {
-      constructor(props) {
-        super(props)
-        this.state= {
-          reservationDate:'',
-          redirectToReservar: false,
-          redirectToLiberar: false,
-          liberarVisible: false
-        }
+    constructor(props) {
+      super(props)
+      this.state= {
+        reservationDate:'',
+        redirectToReservar: false,
+        redirectToLiberar: false,
+        liberarVisible: false
       }
-      handleDayClick = (day,{reserved1,reserved2,reserved3,available1,available2,available3}) => {
-        if(reserved1 || reserved2 ||reserved3){
-          const weekDay = day.getDay()
-          const month = day.getMonth();
-          const dia = day.getDate() ;
-          const year = day.getFullYear();
-          this.setState({
-            reservationDate: `${ WEEKDAYS_LONG[weekDay]} ${dia} de ${MONTHS[month]} de ${year}`,
-            liberarVisible: true
-          })
-        }
-        if(available1 || available2 || available3) {
-         this.setState({redirectToReservar: true})
-        }
-      }
-
-   render () {  
-    const modifiers = {
-      thursdays: { daysOfWeek: [4] },
-      reserved1: new Date(2019, 6, 30),
-      reserved2: new Date(2019, 6, 31),
-      reserved3: new Date(2019, 6, 29),
-      available1: new Date(2019, 6, 24),
-      available2: new Date(2019, 6, 25),
-      available3: new Date(2019, 6, 26),
-    };
+    }
     
-    const modifiersStyles = {
-      reserved1: {
-        color: 'white',
-        backgroundColor: '#00A3E0',
-      },
-      reserved2: {
-        color: 'white',
-        backgroundColor: '#00A3E0',
-      },
-      reserved3: {
-        color: 'white',
-        backgroundColor: '#00A3E0',
-      },
-      available1: {
-        color: 'white',
-        backgroundColor: '#15A919',
-      },
-      available2: {
-        color: 'white',
-        backgroundColor: '#15A919',
-      },
-      available3: {
-        color: 'white',
-        backgroundColor: '#15A919',
-      },
-      outside: {
-        backgroundColor: 'white',
-      },
-    }; 
+    handleDayClick = (day,{reserved1,reserved2,reserved3,available1,available2,available3}) => {
+      if(reserved1 || reserved2 ||reserved3){
+        const weekDay = day.getDay()
+        const month = day.getMonth();
+        const dia = day.getDate() ;
+        const year = day.getFullYear();
+        this.setState({
+          reservationDate: `${WEEKDAYS_LONG[weekDay]} ${dia} de ${MONTHS[month]} de ${year}`,
+          liberarVisible: true
+        })
+      }
+      if(available1 || available2 || available3) {
+        this.setState({redirectToReservar: true})
+      }
+    }
+
+    render() {  
         return (
           <div>
             <div className="headerContent">
@@ -181,7 +184,7 @@ import 'react-day-picker/lib/style.css';
                     <ListItem>
                     <ListItemAvatar>
                     <Avatar 
-                      style={{ margin: 0, color: '#fff', backgroundColor: '#00A3E0', fontSize:'.9em'}}>N</Avatar>
+                      style={{ margin: 0, color: '#28373C', backgroundColor: '#EBF5F7', fontSize:'.9em'}}>N</Avatar>
                   </ListItemAvatar>
                       <ListItemText
                         primary="Sin Plazas Disponibles"

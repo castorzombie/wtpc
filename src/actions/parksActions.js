@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { SHOW_PARKS, SHOW_PARK, ADD_PARK, DELETE_PARK } from './types';
+import { SHOW_PARKS, SHOW_PARK, ADD_PARK, DELETE_PARK, GET_RESERVATION_DATE, SET_RESERVATION_DATE } from './types';
 
 export const showParks = () => async dispatch => {
     const response = await axios.get('http://localhost:3001/parks');
@@ -32,3 +32,16 @@ export const addPark = park => async dispatch => {
         payload: response.data
     });
 };
+
+export const setReservationDate = (reservationDate) => {
+    return {
+        type:SET_RESERVATION_DATE,
+        reservationDate
+    }
+}
+
+export const getReservationDate = () => {
+    return {
+        type: GET_RESERVATION_DATE
+    };
+}

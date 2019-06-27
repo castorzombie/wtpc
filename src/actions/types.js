@@ -2,3 +2,5 @@ export const SHOW_PARKS = "SHOW_PARKS";
 export const SHOW_PARK = "SHOW_PARK";
 export const ADD_PARK = "ADD_PARK";
 export const DELETE_PARK = "DELETE_PARK";
+export const GET_RESERVATION_DATE = "GET_RESERVATION_DATE";
+export const SET_RESERVATION_DATE = "SET_RESERVATION_DATE";
