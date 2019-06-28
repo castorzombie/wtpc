@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import NavToolbar from './NavToolbar';
-import DashboardHeader from './DashboardHeader';
 import Calendar from './Calendar';
 import Map from './Map';
 import Footer from './Footer';

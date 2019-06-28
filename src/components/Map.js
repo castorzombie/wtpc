@@ -42,7 +42,7 @@ export default class Map extends Component {
               </Grid>
           </Container>
           <PinchZoomPan position="center">
-            <img alt='Parking Map Image' src={this.state.plantaPrimera ? plantaPrimera: plantaSegunda} />
+            <img alt="Parking Map" src={this.state.plantaPrimera ? plantaPrimera: plantaSegunda} />
         </PinchZoomPan>
       </Grid>
     )

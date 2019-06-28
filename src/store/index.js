@@ -9,16 +9,16 @@ const middleware = applyMiddleware(thunk);
 const reduxDevTools =
     window.__REDUX_DEVTOOLS_EXTENSION__ &&
     window.__REDUX_DEVTOOLS_EXTENSION__();
-
+/*
 const devTools = process.env.NODE_ENV === 'development' ?
-    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() : null
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() : null */
 
 const store = createStore(
     rootReducer,
     initialState,
     compose(
-     /* middleware, 
-     reduxDevTools  */
+     middleware, 
+     reduxDevTools 
     )
 );
 

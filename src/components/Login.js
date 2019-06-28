@@ -35,41 +35,41 @@ import Container from '@material-ui/core/Container';
    
     return (
       <div className="wtn-wrapper loginwrapper">
-      <Container component="main" maxWidth="xs">
-      <CssBaseline />
-      <div className={classes.paper}>
-      <img src="http://werfen.com/themes/custom/werfen_theme/img/werfen-logo.png" width="200px"/>
-      <Typography className={classes.tpr}>
-        Tower Parking Reservations
-      </Typography>
-                <TextField
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  fullWidth
-                  id="email"
-                  label="Email Address"
-                  name="email"
-                  autoComplete="email"
-                  autoFocus
-                />
-                <TextField
-                  variant="outlined"
-                  margin="normal"
-                  required
-                  fullWidth
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="current-password"
-                />
-              <Link to={`dashboard`} 
-                  variant="contained"
-                  color="primary"
-                  className="wfnbtn wfnmargintop20">Sign In</Link>
-            </div>
-          </Container>
+        <Container component="main" maxWidth="xs">
+        <CssBaseline />
+          <div className={classes.paper}>
+          <img alt="logo" src="http://werfen.com/themes/custom/werfen_theme/img/werfen-logo.png" width="200px"/>
+          <Typography className={classes.tpr}>
+            Tower Parking Reservations
+          </Typography>
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              id="email"
+              label="Email Address"
+              name="email"
+              autoComplete="email"
+              autoFocus
+            />
+            <TextField
+              variant="outlined"
+              margin="normal"
+              required
+              fullWidth
+              name="password"
+              label="Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
+            />
+            <Link to={`dashboard`} 
+              variant="contained"
+              color="primary"
+              className="wfnbtn wfnmargintop20">Sign In</Link>
+          </div>
+        </Container>
       </div>
     );
   }
