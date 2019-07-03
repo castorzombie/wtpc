@@ -17,8 +17,8 @@ const store = createStore(
     rootReducer,
     initialState,
     compose(
-     middleware, 
-     reduxDevTools 
+    middleware, 
+    reduxDevTools
     )
 );
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CalendarHeader from './CalendarHeader';
 import CustomDayPicker from './CustomDayPicker';
+import CustomDayPickerFull from './CustomDayPickerFull';
 import CalendarStatus from './CalendarStatus';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
@@ -28,7 +29,7 @@ class Calendar extends Component {
                 Calendario de reservas
               </Typography>
               <CardContent style={{flexGrow: 1,}}>
-                <CustomDayPicker />
+                <CustomDayPickerFull />
               </CardContent>
             </Card>
           </div>
