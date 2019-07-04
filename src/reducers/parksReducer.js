@@ -2,7 +2,7 @@ import { SHOW_PARKS, SHOW_PARK, ADD_PARK, DELETE_PARK, GET_RESERVATION_DATE, SET
 
 const initialState = {
     parks: [],
-    reservationDate: 'Lunes 1 de Julio de 2019'
+    reservationDate: 'Viernes 5 de Julio de 2019'
 };
 
 export default function(state=initialState, action) {

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
 import { getReservationDate, setReservationDate } from '../actions/parksActions';
 import { Redirect } from 'react-router';
 import DayPicker from 'react-day-picker';
@@ -9,7 +10,7 @@ import 'react-day-picker/lib/style.css';
   //CONSTANTS
   
   const reservedMockupDates = [
-    new Date(2019, 6, 1), new Date(2019, 6, 2), new Date(2019, 6, 3), new Date(2019, 6, 4), new Date(2019, 6, 5),
+    new Date(2019, 6, 5),
     new Date(2019, 6, 8), new Date(2019, 6, 9), new Date(2019, 6, 10), new Date(2019, 6, 11), new Date(2019, 6, 12),
     new Date(2019, 6, 15), new Date(2019, 6, 16), new Date(2019, 6, 17), new Date(2019, 6, 18), new Date(2019, 6, 19),
     new Date(2019, 6, 15), new Date(2019, 6, 16), new Date(2019, 6, 17), new Date(2019, 6, 18), new Date(2019, 6, 19),
@@ -68,10 +69,8 @@ class CustomDayPicker extends Component {
   constructor(props) {
     super(props)
     this.state= {
-      reservationDate:'Lunes 1 de Julio de 2019',
       redirectToReservar: false,
-      redirectToLiberar: false,
-      liberarVisible: true
+      redirectToLiberar: false
     }
   }
   
@@ -80,16 +79,13 @@ class CustomDayPicker extends Component {
   }
   
   handleDayClick = (day,{reserved,available}) => {
-    
-    const weekDay = day.getDay()
+
     const month = day.getMonth();
     const dia = day.getDate() ;
     const year = day.getFullYear();
-    const displayDate = `${WEEKDAYS_LONG[weekDay]} ${dia} de ${MONTHS[month]} de ${year}`
-
-    this.setState(() => ({ reservationDate: displayDate }))
+    const reduxDate = [year,month,dia]
     
-    this.props.setReservationDate(displayDate);
+    this.props.setReservationDate(reduxDate);
     
     if(reserved){
       this.setState({ liberarVisible: true })

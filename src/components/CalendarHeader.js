@@ -4,14 +4,78 @@ import { getReservationDate } from '../actions/parksActions';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 
+const MONTHS = [
+  'Enero',
+  'Febrero',
+  'Marzo',
+  'Abril',
+  'Mayo',
+  'Junio',
+  'Julio',
+  'Agosto',
+  'Setiembre',
+  'Octubre',
+  'Noviembre',
+  'Dicembre',
+];
+const WEEKDAYS_LONG = [
+  'Domingo',
+  'Lunes',
+  'Martes',
+  'Miercoles',
+  'Jueves',
+  'Viernes',
+  'Sabado',
+];
 
 class CalendardHeader extends Component {
 
   constructor(props) {
     super(props)
     this.state= {
-      reservationDate:'Lunes 1 de Julio de 2019',
-      liberarVisible: true
+      reservationDate:'Viernes 5 de Julio de 2019',
+      liberarVisible: false,
+    }
+  }
+
+  componentDidMount() {
+
+    const day = new Date()
+    const weekDay = day.getDay()
+    const month = day.getMonth();
+    const dia = day.getDate() ;
+    const year = day.getFullYear();
+
+    const displayDate = `${WEEKDAYS_LONG[weekDay]} ${dia} de ${MONTHS[month]} de ${year}`;
+
+    this.setState(() => ({ reservationDate: displayDate }))
+
+  }
+
+  componentDidUpdate(previousProps) {
+    
+    const { reservationDate } = this.props;
+    
+    const day = new Date(reservationDate[0], reservationDate[1], reservationDate[2])
+    const weekDay = day.getDay()
+    const month = day.getMonth();
+    const dia = day.getDate() ;
+    const year = day.getFullYear();
+
+    const currentDay = new Date();
+
+    const displayDate = `${WEEKDAYS_LONG[weekDay]} ${dia} de ${MONTHS[month]} de ${year}`;
+    
+    if (this.props.reservationDate !== previousProps.reservationDate) {
+      
+      this.setState(() => ({ reservationDate: displayDate }))
+
+      if( day > currentDay ){
+        this.setState( () => ({ liberarVisible: true }))
+      }else {
+        this.setState( () => ({ liberarVisible: false }))
+      }
+
     }
   }
 
@@ -20,7 +84,7 @@ class CalendardHeader extends Component {
     return (
       <React.Fragment>
         <h2 className="headerTypo">
-          {reservationDate ? reservationDate : 'Ninguna Plaza Reservada'}
+          {this.state.reservationDate ? this.state.reservationDate : 'Ninguna Plaza Reservada'}
         </h2>
         <Typography variant="h6" align="center" color="textSecondary" paragraph>
           {reservationDate ? 'Plaza reservada 060 en Planta 1': ''}
