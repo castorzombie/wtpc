@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Button from '@material-ui/core/Button';
 import { getReservationDate, setReservationDate } from '../actions/parksActions';
 import { Redirect } from 'react-router';
 import DayPicker from 'react-day-picker';
@@ -10,15 +9,16 @@ import 'react-day-picker/lib/style.css';
   //CONSTANTS
   
   const reservedMockupDates = [
-    new Date(2019, 6, 5),
-    new Date(2019, 6, 8), new Date(2019, 6, 9), new Date(2019, 6, 10), new Date(2019, 6, 11), new Date(2019, 6, 12),
-    new Date(2019, 6, 15), new Date(2019, 6, 16), new Date(2019, 6, 17), new Date(2019, 6, 18), new Date(2019, 6, 19),
-    new Date(2019, 6, 15), new Date(2019, 6, 16), new Date(2019, 6, 17), new Date(2019, 6, 18), new Date(2019, 6, 19),
-    new Date(2019, 6, 22), new Date(2019, 6, 23), new Date(2019, 6, 29), new Date(2019, 6, 30), new Date(2019, 6, 31)
+    new Date(2019, 6, 17)
+
   ];
 
   const freeMockupDates = [
-    new Date(2019, 6, 24), new Date(2019, 6, 25), new Date(2019, 6, 26)
+    new Date(2019, 6, 8), new Date(2019, 6, 9), new Date(2019, 6, 10), new Date(2019, 6, 11), new Date(2019, 6, 12),
+    new Date(2019, 6, 15), new Date(2019, 6, 16), new Date(2019, 6, 18), new Date(2019, 6, 19),
+    new Date(2019, 6, 15), new Date(2019, 6, 16), new Date(2019, 6, 18), new Date(2019, 6, 19),
+    new Date(2019, 6, 22), new Date(2019, 6, 23), new Date(2019, 6, 29), new Date(2019, 6, 30), new Date(2019, 6, 31),
+  new Date(2019, 6, 24), new Date(2019, 6, 25), new Date(2019, 6, 26)
   ];
 
   const MONTHS = [

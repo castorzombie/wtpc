@@ -35,6 +35,7 @@ class CalendardHeader extends Component {
     this.state= {
       reservationDate:'Viernes 5 de Julio de 2019',
       liberarVisible: false,
+      reservedSpotNumber: true
     }
   }
 
@@ -71,11 +72,24 @@ class CalendardHeader extends Component {
       this.setState(() => ({ reservationDate: displayDate }))
 
       if( day > currentDay ){
-        this.setState( () => ({ liberarVisible: true }))
-      }else {
-        this.setState( () => ({ liberarVisible: false }))
+        this.setState( () => ({ 
+          liberarVisible: true,
+          reservedSpotNumber: true
+         }))
       }
-
+      if(day < currentDay){
+        this.setState( () => ({ 
+          liberarVisible: false,
+          reservedSpotNumber: false
+        }))
+      }
+      if(day.toLocaleDateString() === currentDay.toLocaleDateString()){
+        this.setState( () => ({ 
+          liberarVisible: false,
+          reservedSpotNumber: true
+        }))
+      }
+      
     }
   }
 
@@ -87,7 +101,7 @@ class CalendardHeader extends Component {
           {this.state.reservationDate ? this.state.reservationDate : 'Ninguna Plaza Reservada'}
         </h2>
         <Typography variant="h6" align="center" color="textSecondary" paragraph>
-          {reservationDate ? 'Plaza reservada 060 en Planta 1': ''}
+          {this.state.reservedSpotNumber ? 'Plaza reservada 060 en Planta 1': 'Sin plaza asignada'}
         </Typography>
         <div className={ this.state.liberarVisible ? "" : "hideItem"}
               style={{textAlign:'center', margin:'0 auto 10px auto'}}>
